@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{%block content %}
+
+<h3>Login</h3>
+
+<div class="container-fluid">
+	<div class="card card-body">
+		<form method="POST">
+			{% csrf_token %}
+
+			{{form|crispy}}
+
+			<br>
+
+			<input class="btn btn-primary" type="submit" name="" value="Login">
+
+		</form>
+		<br>
+
+		<a href="{% url 'dashboard' %}">Dashboard</a>
+	</div>
+	
+</div>
+
+{% endblock %}
